@@ -2,25 +2,14 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #63BF21;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px);
   color: white;
 }
 
@@ -28,11 +17,61 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container{
+  position: relative;
+  background-image: url(./background.webp);
+  background-size: cover;
+  height: 100vh;
+}
+
+.container::before {
+  content: ""; /* Required to display the pseudo-element */
+  position: absolute; /* Position absolutely within the .container */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black color */
+  pointer-events: none; /* This prevents the overlay from capturing mouse events */
+}
+
+.input{
+  display: flex;
+  height: 30vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-background{
+  position: relative;
+  z-index: -1;
+}
+
+.input-field{
+  z-index: 1;
+  height: 15%;
+  width: 55%;
+  font-size: large;
+  border-radius: 20px;
+  background-color: #EFEFEF;
+}
+
+.button{
+  z-index: 1;
+  margin: 20px;
+  height: 40px;
+  width: 100px;
+  font-size: large;
+  border-radius: 20px;
+  border-color: black;
+  border-width: 1px;
+  color: #63BF21;
+  background-color: #EFEFEF;
+}
+
+.button:hover{
+  background-color: #63BF21;
+  color: white;
+  cursor: pointer;
 }
